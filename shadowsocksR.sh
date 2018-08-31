@@ -5,22 +5,22 @@ export PATH
 #   System Required:  CentOS 6,7, Debian, Ubuntu                  #
 #   Description: One click Install ShadowsocksR Server            #
 #   Author: hageek <wiz@hageek.com>                               #
-#   Intro:  https://gitee.com/hageek/ssr_construction             #
+#   Intro:  https://github.com/wwwhageekcom/SSR                   #
 #=================================================================#
 
 clear
 echo
 echo "#############################################################"
 echo "# One click Install ShadowsocksR Server                     #"
-echo "# Intro: https://gitee.com/hageek/ssr_construction          #"
+echo "# Intro: https://github.com/wwwhageekcom/SSR                #"
 echo "# Author: hageek <wiz@hageek.com>                           #"
 echo "#############################################################"
 echo
 
 libsodium_file="libsodium-1.0.16"
-libsodium_url="https://gitee.com/hageek/ssr_construction/raw/master/libsodium-1.0.16.tar.gz"
+libsodium_url="https://raw.githubusercontent.com/wwwhageekcom/SSR/master/libsodium-1.0.16.tar.gz"
 shadowsocks_r_file="shadowsocksr-3.2.2"
-shadowsocks_r_url="https://gitee.com/hageek/ssr_construction/raw/master/shadowsocksr-3.2.2.tar.gz"
+shadowsocks_r_url="https://raw.githubusercontent.com/wwwhageekcom/SSR/master/shadowsocksr-3.2.2.tar.gz"
 
 #Current folder
 cur_dir=`pwd`
@@ -331,12 +331,12 @@ download_files(){
     fi
     # Download ShadowsocksR init script
     if check_sys packageManager yum; then
-        if ! wget --no-check-certificate https://gitee.com/hageek/ssr_construction/blob/master/shadowsocksR -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/wwwhageekcom/SSR/master/shadowsocksR -O /etc/init.d/shadowsocks; then
             echo -e "[${red}Error${plain}] Failed to download ShadowsocksR chkconfig file!"
             exit 1
         fi
     elif check_sys packageManager apt; then
-        if ! wget --no-check-certificate https://gitee.com/hageek/ssr_construction/blob/master/shadowsocksR-debian -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/wwwhageekcom/SSR/master/shadowsocksR-debian -O /etc/init.d/shadowsocks; then
             echo -e "[${red}Error${plain}] Failed to download ShadowsocksR chkconfig file!"
             exit 1
         fi
